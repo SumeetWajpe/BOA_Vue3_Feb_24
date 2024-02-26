@@ -1,6 +1,6 @@
 <template>
-    <div class="product-card">
-        <img height="200px" width="350px" :src="details.imageUrl" alt="">
+    <div class="col-sm-6 col-md-4 g-2">
+        <img height="200px" width="300px" :src="details.imageUrl" alt="">
         <h2>{{ details.name }}</h2>
         <h4>{{ details.price }}</h4>
     </div>
@@ -20,7 +20,6 @@ defineProps({
 .product-card {
     border: 2px solid gray;
     border-radius: 5px;
-    margin: 5px;
-    padding: 5px;
+
 }
 </style>
