@@ -6,19 +6,36 @@
                 <Rating :noOfStars="details.rating" />
                 <h5 class="card-title">{{ details.name }}</h5>
                 <p class="card-text">₹.{{ details.price }}</p>
+                <!-- <button class="btn btn-primary" @click="incrementLikes">{{ details.likes }}
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </button> -->
+                <button class="btn btn-primary" @click="incrementLikes">{{ count }}
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+
             </div>
         </div>
     </div>
 </template>
 <script setup>
 import Rating from "./Rating.vue"
-defineProps({
+import { ref } from 'vue'
+
+const props = defineProps({
     details: {
         type: Object,
         required: true
     },
 
 })
+const count = ref(props.details.likes);
+
+function incrementLikes() {
+    console.log("Within incrementLikes !")
+    // props.details.likes += 1
+    // console.log(props.details.likes)
+    count.value += 1
+}
 
 
 </script>
