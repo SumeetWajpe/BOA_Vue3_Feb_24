@@ -1,15 +1,18 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Product from './components/Product.vue'
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="Hello Vue !" />
-      <HelloWorld msg="Progressive Framework !" />
-      <HelloWorld />
+    <div>
+
+      <Product name="MacBookPro" v-bind:price="300000" />
+      <Product name="MacBookAir" :price="200000" />
+
+      <!-- <Product /> -->
+
 
     </div>
   </header>
