@@ -1,15 +1,21 @@
 <script setup>
-import Product from './components/Product.vue'
+import Product from "./components/Product.vue"
+
+const productList = [
+  { name: "MacBook Pro", price: 300000 },
+  { name: "MacBook Air", price: 200000 },
+
+]
 
 </script>
 
 <template>
   <header>
-
     <div>
+      <div v-for="product in productList">
+        <Product :details="product" />
+      </div>
 
-      <Product name="MacBookPro" v-bind:price="300000" />
-      <Product name="MacBookAir" :price="200000" />
 
       <!-- <Product /> -->
 

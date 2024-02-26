@@ -1,17 +1,14 @@
 <template>
-    <h2>{{ name }}</h2>
-    <h4>{{ price }}</h4>
+    <h2>{{ details.name }}</h2>
+    <h4>{{ details.price }}</h4>
 </template>
 <script setup>
 defineProps({
-    name: {
-        type: String,
+    details: {
+        type: Object,
         required: true
     },
-    price: {
-        type: Number,
-        required: true
-    }
+
 })
 
 
