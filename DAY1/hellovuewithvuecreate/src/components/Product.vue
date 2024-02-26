@@ -3,16 +3,15 @@
         <div class="card">
             <img height="200px" width="300px" class="card-img-top" :src="details.imageUrl" :alt="details.name">
             <div class="card-body">
+                <Rating :noOfStars="details.rating" />
                 <h5 class="card-title">{{ details.name }}</h5>
                 <p class="card-text">₹.{{ details.price }}</p>
-                <p class="card-text">{{ details.rating }}</p>
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-
             </div>
         </div>
     </div>
 </template>
 <script setup>
+import Rating from "./Rating.vue"
 defineProps({
     details: {
         type: Object,
