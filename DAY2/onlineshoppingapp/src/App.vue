@@ -5,11 +5,8 @@ import ListOfProducts from './components/ListOfProducts.vue';
 </script>
 
 <template>
-  <ListOfProducts />
-  <NewProduct />
-    <ListOfProducts />
-    <ListOfProducts />
-
+  <!-- One one default router, multiple named routerview -->
+  <router-view></router-view>
 </template>
 
 <style scoped></style>

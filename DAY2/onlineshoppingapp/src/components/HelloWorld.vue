@@ -2,14 +2,15 @@
 defineProps({
   msg: {
     type: String,
-    required: true
+    required: false
   }
 })
 </script>
 
 <template>
   <div class="greetings">
-    <h2 class="green">{{ msg }}</h2>
+    <!-- <h2 class="green">{{ msg }}</h2> -->
+    <h2 class="green">Hello World !</h2>
 
   </div>
 </template>
