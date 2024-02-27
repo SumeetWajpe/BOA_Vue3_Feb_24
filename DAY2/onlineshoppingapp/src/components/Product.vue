@@ -43,7 +43,7 @@ function incrementLikes() {
 }
 
 function deleteProduct() {
-    emit('deleteproduct')
+    emit('deleteproduct', props.details.id)
 }
 
 
