@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ListofProducts from "../components/ListOfProducts.vue";
 import Posts from "../components/Posts.vue";
-
+import PostDetails from "../components/PostDetails.vue";
 const routes = [
   {
     path: "/",
@@ -10,6 +10,10 @@ const routes = [
   {
     path: "/posts",
     component: Posts,
+  },
+  {
+    path: "/postdetails",
+    component: PostDetails,
   },
 ];
 

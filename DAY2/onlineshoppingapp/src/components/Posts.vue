@@ -4,7 +4,7 @@
     </header>
     <ul class="list-group">
         <li class="list-group-item" v-for="post in postsData.posts" :key="post.id">
-            {{ post.title }}
+            <router-link to="/postdetails">{{ post.title }}</router-link>
         </li>
     </ul>
 </template>
