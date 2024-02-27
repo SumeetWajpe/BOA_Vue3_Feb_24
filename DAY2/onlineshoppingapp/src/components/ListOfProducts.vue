@@ -1,7 +1,8 @@
 <template>
     <div class="row">
-        
-        <Product v-for="product in products.productList" :details="product" @deleteproduct="handleDeleteProduct" />
+        <h1>List Of Products</h1>
+        <Product v-for="product in products.productList" :details="product" @deleteproduct="handleDeleteProduct"
+            :key="product.id" />
     </div>
 </template>
 <script setup>

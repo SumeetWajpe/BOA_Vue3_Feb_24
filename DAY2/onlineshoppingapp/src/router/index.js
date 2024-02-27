@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ListofProducts from "../components/ListOfProducts.vue";
-import HelloWorld from "../components/HelloWorld.vue";
+import Posts from "../components/Posts.vue";
 
 const routes = [
   {
@@ -8,8 +8,8 @@ const routes = [
     component: ListofProducts,
   },
   {
-    path: "/hello",
-    component: HelloWorld,
+    path: "/posts",
+    component: Posts,
   },
 ];
 
