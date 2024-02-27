@@ -12,7 +12,8 @@ const routes = [
     component: Posts,
   },
   {
-    path: "/postdetails",
+    path: "/postdetails/:id",
+    name:"postdetails",
     component: PostDetails,
   },
 ];
