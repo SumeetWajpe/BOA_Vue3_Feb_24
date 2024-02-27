@@ -1,5 +1,6 @@
 <template>
     <div class="row">
+        
         <Product v-for="product in products.productList" :details="product" @deleteproduct="handleDeleteProduct" />
     </div>
 </template>

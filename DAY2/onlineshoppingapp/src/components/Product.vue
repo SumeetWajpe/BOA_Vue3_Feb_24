@@ -6,10 +6,10 @@
                 <Rating :noOfStars="details.rating" />
                 <h5 class="card-title">{{ details.name }}</h5>
                 <p class="card-text">₹.{{ details.price }}</p>
-                <p v-if="details.quantity == 0">
+                <p v-if="details.quantity == 0" :class="[{ 'text-danger': details.quantity == 0 }, 'card-text']">
                     Out of Stock
                 </p>
-                <p v-else>
+                <p v-else :class="{ 'text-success': details.quantity !== 0 }">
                     Available
                 </p>
                 <!-- <button class="btn btn-primary" @click="incrementLikes">{{ details.likes }}
