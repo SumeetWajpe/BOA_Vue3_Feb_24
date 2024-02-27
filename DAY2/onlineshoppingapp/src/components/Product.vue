@@ -6,6 +6,12 @@
                 <Rating :noOfStars="details.rating" />
                 <h5 class="card-title">{{ details.name }}</h5>
                 <p class="card-text">₹.{{ details.price }}</p>
+                <p v-if="details.quantity == 0">
+                    Out of Stock
+                </p>
+                <p v-else>
+                    Available
+                </p>
                 <!-- <button class="btn btn-primary" @click="incrementLikes">{{ details.likes }}
                     <i class="fa-regular fa-thumbs-up"></i>
                 </button> -->
