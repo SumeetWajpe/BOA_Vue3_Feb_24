@@ -5,12 +5,18 @@ defineProps({
     required: false
   }
 })
+
+const text = ref('')
 </script>
 
 <template>
   <div class="greetings">
     <!-- <h2 class="green">{{ msg }}</h2> -->
     <h2 class="green">Hello World !</h2>
+    <label for="txtMsg">
+      Message :
+    </label>
+    <input type="text" v-model="text">
 
   </div>
 </template>

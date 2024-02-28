@@ -30,7 +30,7 @@ const actions = {
   },
 
   async deleteProduct() {
-    // make async call axios - success -> commit('deleteProduct')
+    // make async call axios - success -> commit('deleteProduct',payload)
   },
 };
 
