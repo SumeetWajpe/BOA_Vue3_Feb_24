@@ -1,7 +1,10 @@
 <template>
     <div class="col-sm-6 col-md-3 g-2">
         <div class="card">
-            <img height="200px" width="300px" class="card-img-top" :src="details.imageUrl" :alt="details.name">
+
+            <router-link :to="{ name: 'productdetails', params: { id: details.id } }">
+                <img height="200px" width="300px" class="card-img-top" :src="details.imageUrl" :alt="details.name">
+            </router-link>
             <div class="card-body">
                 <Rating :noOfStars="details.rating" />
                 <h5 class="card-title">{{ details.name }}</h5>
