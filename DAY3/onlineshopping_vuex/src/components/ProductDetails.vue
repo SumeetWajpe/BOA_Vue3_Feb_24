@@ -29,10 +29,11 @@ const store = useStore();
 
 
 const products = computed(() => store.state.products)
+
 const incrementLikes = (id) => store.dispatch("incrementLikes", id)
 
 onMounted(() => {
-    const index = products.value.findIndex(p => p.id === +route.params.id);
+    const index = products.value.findIndex(p => p.id == +route.params.id);
     product.value = products.value[index];
 })
 function incrementLikesHandler() {

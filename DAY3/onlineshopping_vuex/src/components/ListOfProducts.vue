@@ -7,9 +7,14 @@
 <script setup>
 import Product from "./Product.vue"
 import { useStore } from "vuex"
-import { computed } from "vue"
+import { computed, onMounted } from "vue"
 const store = useStore();
 const products = computed(() => store.state.products)
 
+onMounted(() => {
+    if (products.value.length == 0) {
+        store.dispatch("getProductsAsync")
+    }
+})
 
 </script>
