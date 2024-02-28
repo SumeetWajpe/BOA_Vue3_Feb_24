@@ -11,6 +11,9 @@ const mutations = {
   increment(state) {
     state.count++;
   },
+  incrementBy(state, payload) {
+    state.count += payload;
+  },
   decrement(state) {
     state.count--;
   },
@@ -19,6 +22,7 @@ const mutations = {
 const actions = {
   incrementCount: ({ commit }) => commit("increment"),
   decrementCount: ({ commit }) => commit("decrement"),
+  incrementCountBy: ({ commit }, payload) => commit("incrementBy", payload),
 };
 
 // create an store instance by calling createStore, which Vuex instance gets initialized with
