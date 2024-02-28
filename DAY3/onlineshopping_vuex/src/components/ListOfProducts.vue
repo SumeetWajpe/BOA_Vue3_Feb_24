@@ -4,8 +4,6 @@
     </FancyButton>
     <div class="row">
 
-
-
         <h1>List Of Products</h1>
         <Product v-for="product in products" :details="product" :key="product.id" />
     </div>

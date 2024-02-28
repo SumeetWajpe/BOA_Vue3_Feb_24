@@ -14,6 +14,9 @@
                     <li class="nav-item">
                         <router-link class="nav-link" to="/posts">Posts</router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/async">AsyncComponent</router-link>
+                    </li>
                 </ul>
             </div>
         </div>
