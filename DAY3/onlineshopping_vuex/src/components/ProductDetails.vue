@@ -9,7 +9,7 @@
 
 
             <p>₹.{{ product?.price }}</p>
-            <button class="btn btn-primary" @click="incrementLikes">{{ product?.likes }}
+            <button class="btn btn-primary" @click="incrementLikesHandler">{{ product?.likes }}
                 <i class="fa-regular fa-thumbs-up"></i>
             </button>
 
@@ -21,17 +21,23 @@
 <script setup>
 import Rating from "./Rating.vue"
 import { useRoute } from "vue-router"
-import axios from "axios"
 import { useStore } from "vuex"
 import { computed, onMounted, ref } from "vue"
-const store = useStore();
-const products = computed(() => store.state.products)
 const route = useRoute();
 let product = ref();
+const store = useStore();
+
+
+const products = computed(() => store.state.products)
+const incrementLikes = (id) => store.dispatch("incrementLikes", id)
+
 onMounted(() => {
     const index = products.value.findIndex(p => p.id === +route.params.id);
     product.value = products.value[index];
 })
+function incrementLikesHandler() {
+    incrementLikes(product.value.id)
+}
 </script>
 
 <style scoped></style>

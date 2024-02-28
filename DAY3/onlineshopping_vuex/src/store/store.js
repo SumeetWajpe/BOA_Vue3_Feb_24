@@ -61,8 +61,11 @@ const state = {
 const mutations = {
   incrementLikes(state, payload) {
     // logic
-    let index = state.products.findIndex(p => p.id === payload);
+    console.log(payload);
+
+    let index = state.products.findIndex(p => p.id === +payload);
     state.products[index].likes++;
+    console.log(state.products[index].likes);
   },
 };
 
