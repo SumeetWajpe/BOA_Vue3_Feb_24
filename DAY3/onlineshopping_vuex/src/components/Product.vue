@@ -15,12 +15,10 @@
                 <p v-else :class="{ 'text-success': details.quantity !== 0 }">
                     Available
                 </p>
-                <!-- <button class="btn btn-primary" @click="incrementLikes">{{ details.likes }}
-                    <i class="fa-regular fa-thumbs-up"></i>
-                </button> -->
-                <button class="btn btn-primary" @click="incrementLikes">{{ count }}
+                <button class="btn btn-primary" @click="incrementLikesHandler">{{ details.likes }}
                     <i class="fa-regular fa-thumbs-up"></i>
                 </button>
+
                 <button class="btn btn-danger mx-1" @click="deleteProduct">
                     <i class="fa-solid fa-trash"></i>
                 </button>
@@ -31,7 +29,11 @@
 </template>
 <script setup>
 import Rating from "./Rating.vue"
-import { ref } from 'vue'
+import { useStore } from "vuex"
+import { computed } from "vue"
+const store = useStore();
+
+const incrementLikes = (id) => store.dispatch("incrementLikes", id)
 
 const props = defineProps({
     details: {
@@ -41,18 +43,12 @@ const props = defineProps({
 
 })
 
-const emit = defineEmits(["deleteproduct"])
-const count = ref(props.details.likes);
-
-function incrementLikes() {
-    console.log("Within incrementLikes !")
-    // props.details.likes += 1
-    // console.log(props.details.likes)
-    count.value += 1
+function incrementLikesHandler() {
+    incrementLikes(props.details.id)
 }
 
 function deleteProduct() {
-    emit('deleteproduct', props.details.id)
+
 }
 
 

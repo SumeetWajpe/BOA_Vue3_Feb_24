@@ -1,19 +1,19 @@
 <template>
     <div className="row m-2">
         <div className="col-md-9">
-            <img width="100%" :src="productData.product?.imageUrl" :alt="productData.product?.title" />
+            <img width="100%" :src="product?.imageUrl" :alt="product?.title" />
         </div>
         <div className="col-md-3">
-            <h1>{{ productData?.product?.name }}</h1>
-            <Rating :noOfStars="productData?.product?.rating || 0" />
+            <h1>{{ product?.name }}</h1>
+            <Rating :noOfStars="product?.rating || 0" />
 
 
-            <p>₹.{{ productData.product?.price }}</p>
-            <button class="btn btn-primary" @click="incrementLikes">{{ productData.product?.likes }}
+            <p>₹.{{ product?.price }}</p>
+            <button class="btn btn-primary" @click="incrementLikes">{{ product?.likes }}
                 <i class="fa-regular fa-thumbs-up"></i>
             </button>
 
-            <p>{{ productData?.product?.description }}</p>
+            <p>{{ product?.description }}</p>
         </div>
     </div>
 </template>
@@ -21,18 +21,16 @@
 <script setup>
 import Rating from "./Rating.vue"
 import { useRoute } from "vue-router"
-import { reactive, onMounted } from "vue"
 import axios from "axios"
-const route = useRoute()
-
-
-const productData = reactive({
-    product: {}
-});
-
-onMounted(async () => {
-    const { data } = await axios.get(`http://localhost:3000/products/${route.params.id}`)
-    productData.product = data
+import { useStore } from "vuex"
+import { computed, onMounted, ref } from "vue"
+const store = useStore();
+const products = computed(() => store.state.products)
+const route = useRoute();
+let product = ref();
+onMounted(() => {
+    const index = products.value.findIndex(p => p.id === +route.params.id);
+    product.value = products.value[index];
 })
 </script>
 

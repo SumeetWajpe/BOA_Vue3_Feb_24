@@ -11,7 +11,5 @@ import { computed } from "vue"
 const store = useStore();
 const products = computed(() => store.state.products)
 
-function handleDeleteProduct(theid) {
-    // dispatch an action
-}
+
 </script>
