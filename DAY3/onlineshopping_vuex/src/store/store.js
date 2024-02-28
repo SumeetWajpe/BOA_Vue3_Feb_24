@@ -34,10 +34,15 @@ const actions = {
   },
 };
 
+const getters = {
+  totalProductsCount: state => state.products.length,
+};
+
 // create an store instance by calling createStore, which Vuex instance gets initialized with
 
 export default createStore({
   state,
   actions,
+  getters,
   mutations,
 });
