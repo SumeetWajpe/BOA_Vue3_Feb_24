@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>Count : {{ count }} </p>
-        <button>+</button>
+        <button @click="incrementCount">+</button>
     </div>
 </template>
 
@@ -9,7 +9,8 @@
 import { useStore } from "vuex"
 import { computed } from "vue"
 const store = useStore();
-const count = store.state.count;
+const count = computed(() => store.state.count);
+const incrementCount = () => store.dispatch("incrementCount")
 </script>
 
 <style scoped></style>
