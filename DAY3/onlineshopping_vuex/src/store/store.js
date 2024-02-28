@@ -18,7 +18,7 @@ const state = {
       name: "MacBook Air",
       quantity: 100,
       price: 200000,
-      rating: 3,
+      rating: 4,
       likes: 200,
       imageUrl:
         "https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-100982979/100982979.jpg",
