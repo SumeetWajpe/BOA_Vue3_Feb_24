@@ -1,0 +1,31 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "VueJS",
+      "price": 5000,
+      "likes": 500,
+      "rating": 4,
+      "imageUrl": "https://img-b.udemycdn.com/course/750x422/5157066_66bb.jpg",
+      "description":"Vue.js is an open-source modelviewviewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You and is maintained by him and the rest of the active core team members. "
+    },
+    {
+      "id": 2,
+      "title": "React",
+      "price": 4000,
+      "likes": 300,
+      "rating": 4,
+      "imageUrl": "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/2EP14mWkbx9sq03nWnRSGT/f1d22d88bb5dde030275f9520c0f2e92/React_YT_Thumbnail.png",
+      "description": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js. "
+    },
+    {
+      "id": 3,
+      "title": "Redux",
+      "price": 4500,
+      "likes": 100,
+      "rating": 3,
+      "imageUrl": "https://blog.openreplay.com/images/understanding-redux-thunk-for-react--the-big-picture/images/hero.png",
+      "description":"Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark."
+    }
+  ]
+}
